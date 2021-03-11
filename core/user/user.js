@@ -37,8 +37,6 @@ exports.create = (req, res) => {
 }
 
 exports.getAll = (req, res) => {
-    console.log(req)
-
     User.find()
     .then(data => {
         return res.status(200).send(data)
@@ -126,8 +124,6 @@ exports.login = (req, res) => {
             }
 
             if (!match) {
-                console.log('Wrong password!')
-
                 return res.status(500).send({
                     message: 'Wrong password!'
                 })
