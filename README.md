@@ -1,7 +1,7 @@
 # node-rest
 A very simple REST API using NodeJS.<br>
 Framework using `ExpressJS` & database using `MongoDB`
-<br><br>
+
 # Installation
 ```bash
 $ git clone https://github.com/geshtng/node-rest
@@ -13,7 +13,7 @@ $ npm start
 # or
 $ node main.js
 ```
-<br><br>
+
 # Installation with Docker
 1. Open `config.js`
 2. Modify this line:
@@ -35,7 +35,7 @@ $ node main.js
     # Stop
     $ make stop
     ```
-<br><br>
+
 # Documentation
 You can see the documentation on [wiki]
 
