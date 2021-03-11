@@ -147,6 +147,7 @@ exports.login = (req, res) => {
 exports.register = (req, res) => {
     const param = req.body
     var query = param
+    query.role = ROLE_USER
     query.created_at = new Date()
 
     User.create(query)
