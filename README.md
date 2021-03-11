@@ -40,3 +40,14 @@ $ node main.js
 You can see the documentation on [wiki]
 
    [wiki]: <https://github.com/geshtng/node-rest/wiki>
+<br><br>
+To create first admin account, you can call this API
+```HTTP
+POST localhost:8080/generate_default_admin
+```
+Then you have admin account with this data:
+```
+fullname: Admin
+username: admin
+password: password
+```
