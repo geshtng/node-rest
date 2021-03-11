@@ -1,0 +1,14 @@
+version: "3"
+services:
+  node-rest:
+      container_name: node-rest
+      restart: always
+      build: ./
+      image: node-rest:latest
+      ports:
+        - 8080:8080
+  mongo:
+      container_name: mongo
+      image: mongo
+      ports:
+        - "27017:27017"
