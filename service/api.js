@@ -11,20 +11,14 @@ exports.isAdmin = (req, res, next) => {
 }
 
 module.exports = (app) => {
-    /* Handle GET */
+    app.get('/users', this.isAdmin, User.getAll)
+    app.get('/users/:_id', User.getById)
 
-    // User
-    app.get('/user/get_all', this.isAdmin, User.getAll)
-    app.get('/user/get_by_id/:_id', User.getById)
+    app.post('/users/create', this.isAdmin, User.create)
 
-    //--------------------------------------------------
+    app.put('/users/update/:_id', this.isAdmin, User.update)
 
-    /* Handle POST */
-
-    // User
-    app.post('/user/create', this.isAdmin, User.create)
-    app.post('/user/update/:_id', this.isAdmin, User.update)
-    app.post('/user/delete', this.isAdmin, User.delete)
+    app.post('/users/delete', this.isAdmin, User.delete)
 
     // Authorization
     app.post('/generate_default_admin', User.generateDefaultAdmin)
