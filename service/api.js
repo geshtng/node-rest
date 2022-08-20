@@ -14,11 +14,11 @@ module.exports = (app) => {
     app.get('/users', this.isAdmin, User.getAll)
     app.get('/users/:_id', User.getById)
 
-    app.post('/users/create', this.isAdmin, User.create)
+    app.post('/users', this.isAdmin, User.create)
 
-    app.put('/users/update/:_id', this.isAdmin, User.update)
+    app.put('/users/:_id', this.isAdmin, User.update)
 
-    app.post('/users/delete', this.isAdmin, User.delete)
+    app.delete('/users/:_id', this.isAdmin, User.delete)
 
     // Authorization
     app.post('/generate_default_admin', User.generateDefaultAdmin)

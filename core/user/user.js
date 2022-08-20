@@ -22,6 +22,7 @@ function createToken(data) {
 exports.create = (req, res) => {
     var param = req.body
     var query = param
+
     query.created_at = new Date()
     query.created_by = req.user.sub
 
@@ -76,6 +77,7 @@ exports.update = (req, res) => {
     var id = req.params
     var param = req.body
     var query = param
+
     query.updated_at = new Date()
     query.updated_by = req.user.sub
 
@@ -91,7 +93,7 @@ exports.update = (req, res) => {
 }
 
 exports.delete = (req, res) => {
-    var id = req.body
+    var id = req.params
 
     User.deleteOne(id)
     .then(data => {
@@ -147,6 +149,7 @@ exports.login = (req, res) => {
 exports.register = (req, res) => {
     const param = req.body
     var query = param
+    
     query.role = ROLE_USER
     query.created_at = new Date()
 
